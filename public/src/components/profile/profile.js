@@ -1,6 +1,7 @@
 class MyProfile extends HTMLElement {
    ///metodo para declara que atributos/parametros
     //Vamos a utilizar en nuestra clase
+    
     static get ObservedAttributes(){
         return ["id", "name", "lastname", "age"];
 
@@ -19,21 +20,20 @@ class MyProfile extends HTMLElement {
 
     //Metodo que se encarga de ejecutarse
     //si algun valor cambia
-    attributeChangedCallback(propName,newValue){
+    attributeChangedCallback(propName, oldValue, newValue){
         this[propName] = newValue;
-        this.render();
-    }
-
-    mount() {
         this.render();
     }
 
     render(){
         this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="/src/components/profile/styles.css">
+
         <section>
         <p>ID User: ${this.id} </p>
         <h1>Name: ${this.name} Username: ${this.username} </h1>
-        <p><strong>${this.email}</strong></p>
+        <p>this is one of our users</p>
+        <span><strong>Email: ${this.email}</strong><span>
         </section>
         `
     }
