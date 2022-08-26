@@ -3,7 +3,7 @@ class MyProfile extends HTMLElement {
     //Vamos a utilizar en nuestra clase
     
     static get ObservedAttributes(){
-        return ["id", "name", "lastname", "age"];
+        return ["uuid", "name", "lastname", "age"];
 
     }
     
@@ -30,7 +30,7 @@ class MyProfile extends HTMLElement {
         <link rel="stylesheet" href="/src/components/profile/styles.css">
 
         <section>
-        <p>ID User: ${this.id} </p>
+        <p>ID User: ${this.uuid} </p>
         <h1>Name: ${this.name} Username: ${this.username} </h1>
         <p>this is one of our users</p>
         <span><strong>Email: ${this.email}</strong><span>
